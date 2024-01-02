@@ -1,0 +1,17 @@
+VPS Hostinger
+
+KVM 2
+2 vCPU Cores
+8 GB de RAM
+100 GB NVMe Disk space
+2 TB de Largura de Banda
+1 Snapshot
+Backups semanais
+IP dedicado - 1 IP
+Acesso root completo
+IA Assistente
+Detector de malware
+R$ 39,99/mês*
+*Em planos de 12 meses
+
+
