@@ -49,7 +49,9 @@ BEGIN TRY
         '''hist_padrao'','+
         '''DFnumero'','+
         '''Conta'','+
-        '''DFcomplemento_historico'' ' + 'union ' 
+        '''DFcomplemento_historico'' ' +         
+        '''DFcod_classe_financeira'' ' +
+        '''CLASSE'' ' + 'union ' 
   SET @query =  @query +
      'Select ''1'','+
   '     convert(varchar(200),tb1.DFcod_empresa) as DFcod_empresa' +
@@ -75,7 +77,9 @@ BEGIN TRY
   '   , convert(varchar(200),tb4.DFdescricao) as hist_padrao ' +
   '   , convert(varchar(200),tb2.DFnumero) as DFnumero ' +
   '   , convert(varchar(200),tb2.DFdescricao) as Conta ' +
-  '   , convert(varchar(200),tb1.DFcomplemento_historico) as DFcomplemento_historico' +
+  '   , convert(varchar(200),tb1.DFcomplemento_historico) as DFcomplemento_historico' +  
+  '   , convert(varchar(200),tb13.DFcod_classe_financeira' +
+  '   , convert(varchar(200),tb13.DFdescricao as CLASSE' +
   ' from [DBDirector].[dbo].[tbmovimento_bancario] as tb1 ' +
   'inner join [DBDirector].[dbo].[TBconta] as tb2  ' +
   '   on tb1.DFid_conta = tb2.DFid_conta ' +
@@ -97,6 +101,10 @@ BEGIN TRY
   '   on tb8.DFid_titulo_pagar = tb10.DFid_titulo_pagar ' +
   ' left join [DBDirector].[dbo].[TBtitulo_receber] as tb11  ' +
   '   on tb9.DFid_titulo_receber = tb11.DFid_titulo_receber ' +
+  ' inner join [DBDirector].[dbo].[TBrateio_ccusto_cfinanceira_movto_bancario] as tb12  ' +
+  '   on tb1.DFid_movimento_bancario = tb12.DFid_movimento_bancario ' +
+  ' inner join [DBDirector].[dbo].[TBclasse_financeira] as tb13  ' +
+  '   on tb13.DFcod_classe_financeira = TBclasse_financeira.DFcod_classe_financeira ' + 
   'where tb1.DFdata_emissao > ''2023-01-01'''
 
 
