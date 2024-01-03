@@ -101,10 +101,10 @@ BEGIN TRY
   '   on tb8.DFid_titulo_pagar = tb10.DFid_titulo_pagar ' +
   ' left join [DBDirector].[dbo].[TBtitulo_receber] as tb11  ' +
   '   on tb9.DFid_titulo_receber = tb11.DFid_titulo_receber ' +
-  ' inner join [DBDirector].[dbo].[TBrateio_ccusto_cfinanceira_movto_bancario] as tb12  ' +
+  ' left join [DBDirector].[dbo].[TBrateio_ccusto_cfinanceira_movto_bancario] as tb12  ' +
   '   on tb1.DFid_movimento_bancario = tb12.DFid_movimento_bancario ' +
-  ' inner join [DBDirector].[dbo].[TBclasse_financeira] as tb13  ' +
-  '   on tb13.DFcod_classe_financeira = TBclasse_financeira.DFcod_classe_financeira ' + 
+  ' left join [DBDirector].[dbo].[TBclasse_financeira] as tb13  ' +
+  '   on tb12.DFcod_classe_financeira = tb13.DFcod_classe_financeira ' + 
   'where tb1.DFdata_emissao > ''2023-01-01'''
 
 
