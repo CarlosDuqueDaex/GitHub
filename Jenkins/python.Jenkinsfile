@@ -3,12 +3,12 @@ pipeline {
   stages {
     stage('pasta-jenkins01') {
       steps {
-        print('version')
+        print('Carlos')
       }
     }
     stage('pasta-jenkins02') {
       steps {
-        print('pasta-jenkins02')
+        print('Duke')
       }
     }
   }
