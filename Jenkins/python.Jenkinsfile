@@ -8,7 +8,7 @@ pipeline {
     }
     stage('pasta-jenkins02') {
       steps {
-        print('Duke')
+        sh 'py3 hello.py'
       }
     }
   }
