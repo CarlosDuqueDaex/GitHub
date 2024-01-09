@@ -3,7 +3,7 @@ pipeline {
   stages {
     stage('pasta-jenkins01') {
       steps {
-        import pandas as pd
+        sh 'python3 --version'
         print('Carlos')
       }
     }
