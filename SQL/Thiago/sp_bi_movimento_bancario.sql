@@ -23,6 +23,8 @@ BEGIN TRY
   DECLARE @bcp_cmd4 VARCHAR(8000);
   DECLARE @query VARCHAR(8000);
 
+
+
   SET @query =  '';
   SET @query= @query +
 	    'Select ''0'','+
@@ -49,9 +51,11 @@ BEGIN TRY
         '''hist_padrao'','+
         '''DFnumero'','+
         '''Conta'','+
-        '''DFcomplemento_historico'' ' +         
-        '''DFcod_classe_financeira'' ' +
-        '''CLASSE'' ' + 'union ' 
+        '''DFcomplemento_historico'',' +         
+        '''DFcod_classe_financeira'',' +
+        '''CLASSE'',' +
+        '''VALOR_BAIXA_PAGAR'',' +
+        '''VALOR_BAIXA_RECEBER'' ' + 'union ' 
   SET @query =  @query +
      'Select ''1'','+
   '     convert(varchar(200),tb1.DFcod_empresa) as DFcod_empresa' +
@@ -77,9 +81,11 @@ BEGIN TRY
   '   , convert(varchar(200),tb4.DFdescricao) as hist_padrao ' +
   '   , convert(varchar(200),tb2.DFnumero) as DFnumero ' +
   '   , convert(varchar(200),tb2.DFdescricao) as Conta ' +
-  '   , convert(varchar(200),tb1.DFcomplemento_historico) as DFcomplemento_historico' +  
-  '   , convert(varchar(200),tb13.DFcod_classe_financeira' +
-  '   , convert(varchar(200),tb13.DFdescricao as CLASSE' +
+  '   , convert(varchar(200),tb1.DFcomplemento_historico) as DFcomplemento_historico ' +  
+  '   , convert(varchar(200),tb13.DFcod_classe_financeira) as DFcod_classe_financeira ' +
+  '   , convert(varchar(200),tb13.DFdescricao) as CLASSE ' +
+  '   , convert(varchar(200),tb8.DFvalor_baixa) as VALOR_BAIXA_PAGAR ' +
+  '   , convert(varchar(200),tb9.DFvalor_baixa) as VALOR_BAIXA_RECEBER ' +
   ' from [DBDirector].[dbo].[tbmovimento_bancario] as tb1 ' +
   'inner join [DBDirector].[dbo].[TBconta] as tb2  ' +
   '   on tb1.DFid_conta = tb2.DFid_conta ' +
@@ -106,7 +112,6 @@ BEGIN TRY
   ' left join [DBDirector].[dbo].[TBclasse_financeira] as tb13  ' +
   '   on tb12.DFcod_classe_financeira = tb13.DFcod_classe_financeira ' + 
   'where tb1.DFdata_emissao > ''2023-01-01'''
-
 
     --print @query;
 	SET @bcp_cmd4 = 'bcp "' + @query + '" queryout "\\192.168.0.6\bi\movimento_bancario.csv" -c -t, -T -S -C ACP';
