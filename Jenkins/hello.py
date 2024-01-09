@@ -8,6 +8,7 @@ vendas_df = pd.DataFrame(venda)
 print(vendas_df)
 
 cte_entrada = pd.read_csv('Jenkins/cte_entrada.csv')
-cte_entrada
+cte = pd.dataframe(cte_entrada)
+print(cte)
 
 print('Teste com sucesso')
