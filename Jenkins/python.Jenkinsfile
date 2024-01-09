@@ -9,7 +9,7 @@ pipeline {
     }
     stage('pasta-jenkins02') {
       steps {
-        sh 'python3 hello.py'
+        sh 'python3 Jenkins/hello.py'
         print('Duke')
       }
     }
