@@ -7,7 +7,7 @@ venda = {'data': ['15/02/2021', '16/02/2021'],
 vendas_df = pd.DataFrame(venda) 
 print(vendas_df)
 
-cte_entrada = pd.read_csv('./cte_entrada.csv')
+cte_entrada = pd.read_csv('Jenkins/cte_entrada.csv')
 cte_entrada.head()
 
 print('Teste com sucesso')
