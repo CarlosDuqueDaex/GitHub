@@ -7,5 +7,4 @@ venda = {'data': ['15/02/2021', '16/02/2021'],
         }
 vendas_df = pd.DataFrame(venda) 
 print(vendas_df)
-display(vendas_df)
 print('Teste com sucesso')
