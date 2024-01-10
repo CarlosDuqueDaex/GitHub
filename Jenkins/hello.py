@@ -20,7 +20,7 @@ def mysql_connection(host, user, passwd):
     )
     return connection
 
-connection = mysql_connection('195.35.16.111', 'root', 'Duke1957')
+connection = mysql_connection('127.0.0.1', 'root', 'Duke1957')
 query = '''
     SELECT * FROM dbProjetos.tbTeste
 '''
