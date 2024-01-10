@@ -1,5 +1,5 @@
 import mysql.connector
-def mysql_connection(host, user, passwd):
+def mysql_connection():
     mysqlconnection = mysql.connector.connect(
         host = '127.0.0.1',
         user = 'root',

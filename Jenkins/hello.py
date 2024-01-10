@@ -12,6 +12,7 @@ print(vendas_df)
 cte_entrada = pd.read_csv('Jenkins/cte_entrada.csv')
 print(cte_entrada.head())
 
+mysql_connection()
 query = '''
     SELECT * FROM dbProjetos.tbTeste
 '''
