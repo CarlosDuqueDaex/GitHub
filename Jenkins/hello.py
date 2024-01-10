@@ -1,5 +1,5 @@
 import pandas as pd
-from mysql_conexao import mysql_connection
+from Jenkins.mysql_conexao import mysql_connection
 
 venda = {'data': ['15/02/2021', '16/02/2021'],
          'valor': [500, 300],
