@@ -16,12 +16,11 @@ def mysql_connection(host, user, passwd):
     connection = mysql.connector.connect(
         host = host,
         user = user,
-        passwd = passwd,
-        auth_plugin='mysql_native_password'
+        passwd = passwd
     )
     return connection
 
-connection = mysql_connection('127.0.0.1', 'root', 'Duke1957')
+connection = mysql_connection('127.0.0.1', 'root', '@Duke1957')
 query = '''
     SELECT * FROM dbProjetos.tbTeste
 '''
