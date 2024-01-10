@@ -1,5 +1,5 @@
 import pandas as pd
-from mysql.connector import connect
+import mysql.connector
 
 venda = {'data': ['15/02/2021', '16/02/2021'],
          'valor': [500, 300],
@@ -13,7 +13,7 @@ cte_entrada = pd.read_csv('Jenkins/cte_entrada.csv')
 print(cte_entrada.head())
 
 def mysql_connection(host, user, passwd, database=None):
-    connection = connect(
+    connection = mysql.connector.connect(
         host = host,
         user = user,
         passwd = passwd,
