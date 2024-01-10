@@ -16,7 +16,8 @@ def mysql_connection(host, user, passwd):
     connection = mysql.connector.connect(
         host = host,
         user = user,
-        passwd = passwd
+        passwd = passwd,
+        auth_plugin='mysql_native_password'
     )
     return connection
 
