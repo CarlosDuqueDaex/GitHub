@@ -12,10 +12,11 @@ print(vendas_df)
 cte_entrada = pd.read_csv('Jenkins/cte_entrada.csv')
 print(cte_entrada.head())
 
+conexao = mysql_conexao.mysql_connection()
 query = '''
     SELECT * FROM dbProjetos.tbTeste
 '''
-cursor = mysql_conexao.mysqlconnection.cursor()
+cursor = conexao.cursor()
 cursor.execute(query)
 result = cursor.fetchall()
 for row in result:
