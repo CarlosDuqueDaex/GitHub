@@ -5,5 +5,6 @@ def mysql_connection():
         user = 'root',
         passwd = '@Duke1957',
         auth_plugin='mysql_native_password'
+    return mysqlconnection    
     )
-    return mysqlconnection
+    
