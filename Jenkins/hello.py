@@ -1,5 +1,5 @@
 import pandas as pd
-from Jenkins.mysql_conexao import mysql_connection
+import mysql_conexao
 
 venda = {'data': ['15/02/2021', '16/02/2021'],
          'valor': [500, 300],
@@ -12,11 +12,10 @@ print(vendas_df)
 cte_entrada = pd.read_csv('Jenkins/cte_entrada.csv')
 print(cte_entrada.head())
 
-mysql_connection()
 query = '''
     SELECT * FROM dbProjetos.tbTeste
 '''
-cursor = mysqlconnection.cursor()
+cursor = mysql_conexao.mysqlconnection.cursor()
 cursor.execute(query)
 result = cursor.fetchall()
 for row in result:
