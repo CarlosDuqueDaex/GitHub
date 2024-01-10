@@ -12,12 +12,11 @@ print(vendas_df)
 cte_entrada = pd.read_csv('Jenkins/cte_entrada.csv')
 print(cte_entrada.head())
 
-def mysql_connection(host, user, passwd, database=None):
+def mysql_connection(host, user, passwd):
     connection = mysql.connector.connect(
         host = host,
         user = user,
-        passwd = passwd,
-        database = database
+        passwd = passwd
     )
     return connection
 
