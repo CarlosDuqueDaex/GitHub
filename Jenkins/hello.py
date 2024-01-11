@@ -26,7 +26,9 @@ for row in result:
     print(row)
 
 # Input e print de entrada pelo teclado
-nome = input("Escreva seu nome: ")
-print('Seu nome é:', nome)
+# nome = input("Escreva seu nome: ")
+# print('Seu nome é:', nome)
+
+print(env.ArquivoCSV)
 
 print('Teste com sucesso')
