@@ -1,0 +1,18 @@
+@charset “utf-8”;
+    #header .logo { 
+        height: 36px;
+    } 
+    /* Custom style for my Jenkins Platform */
+    .logo {
+        background: url(/userContent/daex.png) no-repeat 10px center; 
+    }
+
+    .logo img { 
+        display: none; 
+    }
+
+    .logo:after {
+        content: 'Jenkins my instance';
+        font-weight: bold;
+        white-space: nowrap;
+    } // Content after logo
