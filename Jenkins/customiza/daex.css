@@ -12,7 +12,9 @@
     }
 
     .logo:after {
-        content: 'Jenkins my instance';
-        font-weight: bold;
+        content: 'Jenkins - Daex (Dados Extremos)';
         white-space: nowrap;
+		color: white;
+		position: relative;
+		left: 80px;
     } // Content after logo
