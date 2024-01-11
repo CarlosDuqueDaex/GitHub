@@ -1,7 +1,6 @@
 import pandas as pd
 import mysql_conexao
-
-def arquivo = build.getEnvVars()["ArquivoCSV"]
+import os
 
 # Criar e printar Dataframe ========================
 venda = {'data': ['15/02/2021', '16/02/2021'],
@@ -31,6 +30,7 @@ for row in result:
 # nome = input("Escreva seu nome: ")
 # print('Seu nome é:', nome)
 
+arquivo = os.environ['ArquivoCSV']
 print(arquivo)
 
 print('Teste com sucesso')
