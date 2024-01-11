@@ -1,7 +1,7 @@
 import pandas as pd
 import mysql_conexao
 
-arquivo = build.getEnvVars()["ArquivoCSV"]
+def arquivo = build.getEnvVars()["ArquivoCSV"]
 
 # Criar e printar Dataframe ========================
 venda = {'data': ['15/02/2021', '16/02/2021'],
