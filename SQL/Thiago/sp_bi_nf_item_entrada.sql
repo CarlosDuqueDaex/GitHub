@@ -99,7 +99,7 @@ BEGIN TRY
   ' from [DBDirector].[dbo].[TBnota_fiscal_entrada] as tb1 ' +
   'inner join [DBDirector].[dbo].[TBitem_nota_fiscal_entrada] as tb2 ' +
   '  on tb1.DFid_nota_fiscal_entrada = tb2.DFid_nota_fiscal_entrada ' +
-  'inner join [DBDirector].[dbo].[TBfornecedor] as tb3 ' +
+  'left join [DBDirector].[dbo].[TBfornecedor] as tb3 ' +
   '  on tb1.DFcod_fornecedor_emitente =  tb3.DFcod_fornecedor ' +
   ' left join [DBDirector].[dbo].[TBcliente] as tb4 ' +
   '  on tb1.DFcod_cliente_emitente = tb4.DFcod_cliente ' +

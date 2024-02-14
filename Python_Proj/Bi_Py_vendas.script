@@ -1,0 +1,19 @@
+import pandas as pd
+import pyodbc
+
+server = 'DESKTOP-CEOQIBE\SQLEXPRESS'
+database = 'DWcommerce'
+username = 'Duke'
+password = 'Duke1957'
+    
+sqlconnection = pyodbc.connect('DRIVER={ODBC Driver 17 for SQL Server};\
+                      SERVER='+server+';\
+                      DATABASE='+database+';\
+                      UID='+username+';\
+                      PWD='+ password)  
+  
+# Ler banco de dados com função de conexão externa ====
+
+query = 'SELECT * FROM AdventureWorksDW2022.dbo.vw_Bi_Py_Vendas'
+
+sql_server = pd.read_sql(query,sqlconnection) 

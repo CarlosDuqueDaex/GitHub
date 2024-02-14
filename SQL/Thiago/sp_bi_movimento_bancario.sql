@@ -55,7 +55,10 @@ BEGIN TRY
         '''DFcod_classe_financeira'',' +
         '''CLASSE'',' +
         '''VALOR_BAIXA_PAGAR'',' +
-        '''VALOR_BAIXA_RECEBER'' ' + 'union ' 
+        '''VALOR_BAIXA_RECEBER'',' +
+        '''VALOR_LIQUIDO_PAGAR'',' +
+        '''VALOR_LIQUIDO_RECEBER'' ' +
+        'union ' 
   SET @query =  @query +
      'Select ''1'','+
   '     convert(varchar(200),tb1.DFcod_empresa) as DFcod_empresa' +
@@ -86,6 +89,8 @@ BEGIN TRY
   '   , convert(varchar(200),tb13.DFdescricao) as CLASSE ' +
   '   , convert(varchar(200),tb8.DFvalor_baixa) as VALOR_BAIXA_PAGAR ' +
   '   , convert(varchar(200),tb9.DFvalor_baixa) as VALOR_BAIXA_RECEBER ' +
+  '   , convert(varchar(200),isnull(tb8.dfvalor_baixa,0) + isnull(tb8.dfvalor_multa,0) + isnull(tb8.dfvalor_juros,0) - isnull(tb8.dfvalor_desconto,0)) as VALOR_LIQUIDO_PAGAR ' +
+  '   , convert(varchar(200),isnull(tb9.dfvalor_baixa,0) + isnull(tb9.dfvalor_multa,0) + isnull(tb9.dfvalor_juros,0) - isnull(tb9.dfvalor_desconto,0)) as VALOR_LIQUIDO_RECEBER ' +  
   ' from [DBDirector].[dbo].[tbmovimento_bancario] as tb1 ' +
   'inner join [DBDirector].[dbo].[TBconta] as tb2  ' +
   '   on tb1.DFid_conta = tb2.DFid_conta ' +

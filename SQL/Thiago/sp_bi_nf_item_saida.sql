@@ -61,45 +61,45 @@ BEGIN TRY
         '''DFvalor_imposto_retido'' ' + 'union ' 
   SET @query =  @query +
      'Select ''1'','+
-  '     convert(varchar(200),tb1.DFnumero) as DFnumero' +
-  '   , convert(varchar(200),tb1.DFserie)  as DFserie' +
-  '   , convert(varchar(200),tb1.DFvalor_total) as DFvalor_total' +
-  '   , convert(varchar(200),tb13.DFcod_parametro_nota_fiscal_saida) as DFcod_parametro_nota_fiscal_saida' +
-  '   , convert(varchar(200),tb12.DFdescricao) as PARAMETRO' +
-  '   , convert(varchar(200),tb12.DFestoque_operacao) as DFestoque_operacao' +
-  '   , convert(varchar(200),tb6.DFcodigo_cfo) as DFcodigo_cfo' +
-  '   , convert(varchar(200),tb6.DFdescricao) as CFOP' +
-  '   , convert(varchar(200),tb7.DFdescricao) as NATUREZA' +   
-  '   , convert(varchar(200),tb1.DFdata_emissao) as DFdata_emissao' +
-  '   , convert(varchar(200),tb1.DFdata_saida) as DFdata_saida' +
-  '   , convert(varchar(200),tb8.DFcod_plano_pagamento) as DFcod_plano_pagamento ' +  
-  '   , convert(varchar(200),tb8.DFdescricao) as PLANO' +
-  '   , convert(varchar(200),tb1.DFcod_fornecedor_destinatario) as DFcod_fornecedor_destinatario' +
-  '   , convert(varchar(200),tb3.DFnome) as DFnome' +
-  '   , convert(varchar(200),tb1.DFcod_cliente_destinatario) as DFcod_cliente_destinatario ' +
-  '   , convert(varchar(200),tb4.DFnome) as cliente ' +
-  '   , convert(varchar(200),tb1.DFcod_empresa_destinatario) as DFcod_empresa_destinatario ' +
-  '   , convert(varchar(200),tb5.DFrazao_social) as DFrazao_social ' +
-  '   , convert(varchar(200),tb10.DFcod_item_estoque) as DFcod_item_estoque ' +
-  '   , convert(varchar(200),tb10.DFdescricao) as item ' +
-  '   , convert(varchar(200),tb2.DFpreco_unitario) as DFpreco_unitario ' +
-  '   , convert(varchar(200),tb2.DFqtde) as DFqtde' +
-  '   , convert(varchar(200),tb2.DFvalor_desconto) as DFvalor_desconto' +
-  '   , convert(varchar(200),tb2.DFvalor_total) as DFvalor_total' +
-  '   , convert(varchar(200),tb2.DFcod_tributacao_st) as DFcod_tributacao_st' +
-  '   , convert(varchar(200),tb2.DFaliquota_ipi) as DFaliquota_ipi' +
-  '   , convert(varchar(200),tb2.DFvalor_ipi) as DFvalor_ipi' +
-  '   , convert(varchar(200),tb2.DFaliquota_icms) as DFaliquota_icms' +
-  '   , convert(varchar(200),tb2.DFvalor_icms) as DFvalor_icms' +
-  '   , convert(varchar(200),tb2.DFpercentual_calculo_st) as DFpercentual_calculo_st' +
-  '   , convert(varchar(200),tb2.DFbase_st) as DFbase_st' +
-  '   , convert(varchar(200),tb2.DFvalor_imposto_retido) as DFvalor_imposto_retido' +
+  '     convert(varchar(200),COALESCE(tb1.DFnumero, '''')) as DFnumero' +
+  '   , convert(varchar(200),COALESCE(tb1.DFserie, ''''))  as DFserie' +
+  '   , convert(varchar(200),COALESCE(tb1.DFvalor_total, '''')) as DFvalor_total' +
+  '   , convert(varchar(200),COALESCE(tb13.DFcod_parametro_nota_fiscal_saida, '''')) as DFcod_parametro_nota_fiscal_saida' +
+  '   , convert(varchar(200),COALESCE(tb12.DFdescricao, '''')) as PARAMETRO' +
+  '   , convert(varchar(200),COALESCE(tb12.DFestoque_operacao, '''')) as DFestoque_operacao' +
+  '   , convert(varchar(200),COALESCE(tb6.DFcodigo_cfo, '''')) as DFcodigo_cfo' +
+  '   , convert(varchar(200),COALESCE(tb6.DFdescricao, '''')) as CFOP' +
+  '   , convert(varchar(200),COALESCE(tb7.DFdescricao, '''')) as NATUREZA' +   
+  '   , convert(varchar(200),COALESCE(tb1.DFdata_emissao, '''')) as DFdata_emissao' +
+  '   , convert(varchar(200),COALESCE(tb1.DFdata_saida, '''')) as DFdata_saida' +
+  '   , convert(varchar(200),COALESCE(tb8.DFcod_plano_pagamento, '''')) as DFcod_plano_pagamento ' +  
+  '   , convert(varchar(200),COALESCE(tb8.DFdescricao, '''')) as PLANO' +
+  '   , convert(varchar(200),COALESCE(tb1.DFcod_fornecedor_destinatario, '''')) as DFcod_fornecedor_destinatario' +
+  '   , convert(varchar(200),COALESCE(tb3.DFnome, '''')) as DFnome' +
+  '   , convert(varchar(200),COALESCE(tb1.DFcod_cliente_destinatario, '''')) as DFcod_cliente_destinatario ' +
+  '   , convert(varchar(200),COALESCE(tb4.DFnome, '''')) as cliente ' +
+  '   , convert(varchar(200),COALESCE(tb1.DFcod_empresa_destinatario, '''')) as DFcod_empresa_destinatario ' +
+  '   , convert(varchar(200),COALESCE(tb5.DFrazao_social, '''')) as DFrazao_social ' +
+  '   , convert(varchar(200),COALESCE(tb10.DFcod_item_estoque, '''')) as DFcod_item_estoque ' +
+  '   , convert(varchar(200),COALESCE(tb10.DFdescricao, '''')) as item ' +
+  '   , convert(varchar(200),COALESCE(tb2.DFpreco_unitario, '''')) as DFpreco_unitario ' +
+  '   , convert(varchar(200),COALESCE(tb2.DFqtde, '''')) as DFqtde' +
+  '   , convert(varchar(200),COALESCE(tb2.DFvalor_desconto, '''')) as DFvalor_desconto' +
+  '   , convert(varchar(200),COALESCE(tb2.DFvalor_total, '''')) as DFvalor_total' +
+  '   , convert(varchar(200),COALESCE(tb2.DFcod_tributacao_st, '''')) as DFcod_tributacao_st' +
+  '   , convert(varchar(200),COALESCE(tb2.DFaliquota_ipi, '''')) as DFaliquota_ipi' +
+  '   , convert(varchar(200),COALESCE(tb2.DFvalor_ipi, '''')) as DFvalor_ipi' +
+  '   , convert(varchar(200),COALESCE(tb2.DFaliquota_icms, '''')) as DFaliquota_icms' +
+  '   , convert(varchar(200),COALESCE(tb2.DFvalor_icms, '''')) as DFvalor_icms' +
+  '   , convert(varchar(200),COALESCE(tb2.DFpercentual_calculo_st, '''')) as DFpercentual_calculo_st' +
+  '   , convert(varchar(200),COALESCE(tb2.DFbase_st, '''')) as DFbase_st' +
+  '   , convert(varchar(200),COALESCE(tb2.DFvalor_imposto_retido, '''')) as DFvalor_imposto_retido' +
   ' from [DBDirector].[dbo].[TBnota_fiscal_saida] as tb1 ' +
   'inner join [DBDirector].[dbo].[TBitem_nota_fiscal_saida] as tb2 ' +
   '  on tb1.DFid_nota_fiscal_saida = tb2.DFid_nota_fiscal_saida ' +
   'inner join  [DBDirector].[dbo].[TBnota_fiscal_saida_atacado_varejo] as tb13 ' +
   '  on tb1.DFid_nota_fiscal_saida =  tb13.DFid_nota_fiscal_saida ' +   
-  'inner join [DBDirector].[dbo].[TBfornecedor] as tb3 ' +
+  'left join [DBDirector].[dbo].[TBfornecedor] as tb3 ' +
   '  on tb1.DFcod_fornecedor_destinatario =  tb3.DFcod_fornecedor ' +
   ' left join [DBDirector].[dbo].[TBcliente] as tb4 ' +
   '  on tb1.DFcod_cliente_destinatario = tb4.DFcod_cliente ' +
@@ -118,7 +118,8 @@ BEGIN TRY
   'inner join [DBDirector].[dbo].[TBunidade] as tb11 ' +
   '  on tb9.DFcod_unidade = tb11.DFcod_unidade ' +
   'inner join [DBDirector].[dbo].[TBparametro_nota_fiscal_saida] as tb12 ' +
-  '  on tb13.DFcod_parametro_nota_fiscal_saida = tb12.DFcod_parametro_nota_fiscal_saida'
+  '  on tb13.DFcod_parametro_nota_fiscal_saida = tb12.DFcod_parametro_nota_fiscal_saida' +    
+  'where tb1.DFdata_emissao > ''2023-01-01''' 
 
     --print @query;
 	SET @bcp_cmd4 = 'bcp "' + @query + '" queryout "\\192.168.0.6\bi\nf_item_saida.csv" -c -t, -T -S -C ACP';
